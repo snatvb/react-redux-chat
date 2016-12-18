@@ -1,0 +1,137 @@
+@import "varibles";
+
+.chat {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid $borderColor;
+  border-top: none;
+  border-radius: 4px;
+  &_parent-side {
+    display: flex;
+    align-items: stretch;
+  }
+  &_side {
+    &__left, &__right {
+      display: flex;
+      padding-right: 0;
+    }
+    &__left {
+      width: 35%;
+    }
+    &__right {
+      width: 65%;
+      border-left: 1px solid $borderColor;
+      padding-left: 0;
+    }
+  }
+  &_content {
+    padding: 10px;
+  }
+  &_exit {
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+.chat-list {
+  width: 100%;
+  &_item {
+    padding: 10px 8px;
+    color: $darkBlue;
+    position: relative;
+    cursor: pointer;
+    &.selected {
+      background-color: lighten($blue, 51%);
+    }
+    &_online {
+      font-size: 9px;
+      color: #fff;
+      background-color: #89ae40;
+      position: absolute;
+      bottom: 3px;
+      right: 5px;
+      padding: 1px 6px;
+      text-transform: uppercase;
+      border-radius: 3px;
+    }
+  }
+}
+
+.chat-content {
+  width: 100%;
+  font-size: 18px;
+  $messagePadding: 4px 10px;
+  &_no-msg {
+    min-height: 400px;
+    width: 100%;
+    position: relative;
+    &_text {
+      position: absolute;
+      width: 100%;
+      color: darken($lightGray, 20%);
+      text-align: center;
+      font-size: 14px;
+      bottom: 10px;
+    }
+  }
+  &_messages {
+    min-height: 400px;
+    max-height: 80vh;
+    overflow: auto;
+  }
+  &_me-message {
+    text-align: right;
+    width: 100%;
+    padding: 5px;
+    &_message {
+      text-align: left;
+      max-width: 70%;
+      color: $textOnBlue;
+      display: inline-block;
+      padding: $messagePadding;
+      border-radius: 15px;
+      background-color: $blue;
+    }
+  }
+  &_him-message {
+    text-align: left;
+    width: 100%;
+    padding: 5px;
+    &_message {
+      text-align: left;
+      max-width: 70%;
+      display: inline-block;
+      padding: $messagePadding;
+      border-radius: 15px;
+      background-color: $lightGray;
+    }
+  }
+  &_textarea-container {
+    border-top: 1px solid $borderColor;
+    padding: 5px;
+  }
+  &_textarea {
+    padding: 5px;
+    border: 1px solid lighten($borderColor, 15%);
+    min-height: 40px;
+    width: 100%;
+    &:focus {
+      outline: none;
+      border: 1px solid $borderColor;
+    }
+  }
+  &_btn-send {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color: $textOnBlue;
+    padding-right: 15px;
+    border: none;
+    text-shadow: 0 1px 0 darken($blue, 10%);
+    background: $blue;
+    &:active, &:focus {
+      outline: none !important;
+    }
+  }
+}

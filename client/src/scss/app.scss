@@ -1,0 +1,12 @@
+@import "varibles";
+
+body {
+  color: $textColor;
+}
+
+.choose-user {
+  &_list {
+    max-width: 400px;
+    margin: 20px auto 10px;
+  }
+}

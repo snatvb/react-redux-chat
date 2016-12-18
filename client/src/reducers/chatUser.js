@@ -2,6 +2,10 @@
  * Created by snatvb on 17.12.16.
  */
 
+import * as actionTypes from './chatUser';
+
+const {SET_CHAT_USER_REJECT, SET_CHAT_USER_FULFILLED, REMOVE_CHAT_USER} = actionTypes;
+
 const initialState = {
     fetching: false,
     fetched: false,
@@ -11,18 +15,18 @@ const initialState = {
 
 export default function (state = initialState, action = {}) {
     switch (action.type) {
-        case "SET_CHAT_USER_REJECT":
+        case SET_CHAT_USER_REJECT:
             return Object.assign({}, state, {
                 user: null,
                 fetched: false,
                 error: action.error
             });
-        case "SET_CHAT_USER_FULFILLED":
+        case SET_CHAT_USER_FULFILLED:
             return Object.assign({}, state, {
                 user: action.payload,
                 fetched: true
             });
-        case "REMOVE_CHAT_USER":
+        case REMOVE_CHAT_USER:
             return Object.assign({}, state, {
                 user: null,
                 fetched: false

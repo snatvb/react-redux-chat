@@ -2,6 +2,8 @@
  * Created by snatvb on 17.12.16.
  */
 
+import * as actionTypes from './actionTypes/chats';
+
 const initialState = {
     fetching: false,
     fetched: false,
@@ -9,12 +11,8 @@ const initialState = {
     error: null
 };
 
-const ADD_CHAT_FULFILLED = "ADD_CHAT_FULFILLED";
-//const ADD_CHAT_REJECT = "ADD_CHAT_REJECT";
-const ADD_MESSAGE_FULFILLED = "ADD_MESSAGE_FULFILLED";
-//const ADD_MESSAGE_REJECT = "ADD_MESSAGE_REJECT";
-const SET_CHATS_FULFILLED = "SET_CHATS_FULFILLED";
-//const ADD_MESSAGE_REJECT = "ADD_MESSAGE_REJECT";
+
+const {ADD_CHAT_FULFILLED, ADD_MESSAGE_FULFILLED, SET_CHATS_FULFILLED} = actionTypes;
 
 //function message(state, action) {
 //    switch (action.type) {

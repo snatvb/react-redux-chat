@@ -2,11 +2,15 @@
  * Created by snatvb on 17.12.16.
  */
 
+import * as actionTypes from './actionTypes/profile';
+
+const {FETCH_PROFILE_FULFILLED, FETCH_PROFILE_REJECT, EXIT_PROFILE_FULFILLED} = actionTypes;
+
 let profileLS;
 try {
-    if(localStorage.profile) {
+    if (localStorage.profile) {
         profileLS = JSON.parse(localStorage.profile);
-        if(!profileLS.fetched) {
+        if (!profileLS.fetched) {
             profileLS = null;
         }
     } else {
@@ -27,23 +31,23 @@ const initialState = profileLS || defaultInitialState;
 
 export default function (state = initialState, action = {}) {
     switch (action.type) {
-        case "FETCH_PROFILE_FULFILLED":
+        case FETCH_PROFILE_FULFILLED:
             const newStateProfile = Object.assign({}, state, {
                 fetching: false,
                 fetched: true,
-                profile : {
+                profile: {
                     userId: action.payload.id,
                     userName: action.payload.name
                 }
             });
             localStorage.profile = JSON.stringify(newStateProfile);
             return newStateProfile;
-        case "FETCH_PROFILE_REJECTED":
+        case FETCH_PROFILE_REJECT:
             return Object.assign({}, state, {
                 fetching: false,
                 error: action.payload
             });
-        case "EXIT_PROFILE_FULFILLED":
+        case EXIT_PROFILE_FULFILLED:
             delete localStorage.profile;
             return defaultInitialState;
         default:

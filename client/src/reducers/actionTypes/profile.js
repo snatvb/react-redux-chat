@@ -1,0 +1,8 @@
+/**
+ * Created by snatvb on 18.12.16.
+ */
+
+
+export const FETCH_PROFILE_FULFILLED = 'FETCH_PROFILE_FULFILLED';
+export const FETCH_PROFILE_REJECT = 'FETCH_PROFILE_REJECT';
+export const EXIT_PROFILE_FULFILLED = 'EXIT_PROFILE_FULFILLED';

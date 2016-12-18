@@ -1,0 +1,10 @@
+/**
+ * Created by snatvb on 18.12.16.
+ */
+
+export const ADD_CHAT_FULFILLED = "ADD_CHAT_FULFILLED";
+export const ADD_CHAT_REJECT = "ADD_CHAT_REJECT";
+export const ADD_MESSAGE_FULFILLED = "ADD_MESSAGE_FULFILLED";
+export const ADD_MESSAGE_REJECT = "ADD_MESSAGE_REJECT";
+export const SET_CHATS_FULFILLED = "SET_CHATS_FULFILLED";
+export const SET_CHATS_REJECT = "SET_CHATS_REJECT";

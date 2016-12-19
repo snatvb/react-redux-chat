@@ -7,7 +7,6 @@ import { browserHistory } from 'react-router';
 import {connect} from 'react-redux';
 //import * as chatUserActions from '../../actions/chatUser';
 
-@connect()
 class ChatListItem extends Component {
     constructor() {
         super();

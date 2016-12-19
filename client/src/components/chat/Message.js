@@ -5,14 +5,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-@connect(store => {
-    return {
-        profile: store.profile.profile,
-        profileFetched: store.profile.fetched,
-        chatUser: store.chatUser.user,
-        chatUserFetched: store.chatUser.fetched
-    }
-}) class Message extends Component {
+class Message extends Component {
     myMessage() {
         return this.props.message.user.id === this.props.profile.userId;
     }
@@ -43,4 +36,9 @@ Message.propTypes = {
     }).isRequired
 };
 
-export default Message;
+export default connect(store => {
+    return {
+        profile: store.profile.profile
+    }
+})(Message);
+export const undecorated = Message;

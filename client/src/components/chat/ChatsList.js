@@ -10,16 +10,16 @@ import * as chatsActions from '../../actions/chats';
 
 import ChatsListItem from './ChatsListItem';
 
-@connect(store => {
-    return {
-        //users: store.users.users,
-        //userFetched: store.users.fetched,
-        chats: store.chats.chats,
-        chatsFetched: store.chats.fetched,
-        profile: store.profile.profile,
-        profileFetched: store.profile.fetched
-    }
-})
+//@connect(store => {
+//    return {
+//        //users: store.users.users,
+//        //userFetched: store.users.fetched,
+//        chats: store.chats.chats,
+//        chatsFetched: store.chats.fetched,
+//        profile: store.profile.profile,
+//        profileFetched: store.profile.fetched
+//    }
+//})
 class ChatsList extends Component {
     componentWillReceiveProps(nextProps) {
         //nextProps.users.forEach(user => {
@@ -59,4 +59,14 @@ ChatsList.propTypes = {
     users: React.PropTypes.array.isRequired
 };
 
-export default ChatsList;
+export default connect(store => {
+    return {
+        //users: store.users.users,
+        //userFetched: store.users.fetched,
+        chats: store.chats.chats,
+        chatsFetched: store.chats.fetched,
+        profile: store.profile.profile,
+        profileFetched: store.profile.fetched
+    }
+})(ChatsList);
+export const undecorated = ChatsList;

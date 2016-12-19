@@ -2,7 +2,7 @@
  * Created by snatvb on 17.12.16.
  */
 
-import * as actionTypes from './chatUser';
+import * as actionTypes from './actionTypes/chatUser';
 
 const {SET_CHAT_USER_REJECT, SET_CHAT_USER_FULFILLED, REMOVE_CHAT_USER} = actionTypes;
 

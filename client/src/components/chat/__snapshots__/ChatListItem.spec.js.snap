@@ -1,0 +1,19 @@
+exports[`Chats List Item component render list chats 1`] = `
+<div
+  className="chat-list_item"
+  onClick={[Function]}>
+  tester
+</div>
+`;
+
+exports[`Chats List Item component render list chats when online 1`] = `
+<div
+  className="chat-list_item"
+  onClick={[Function]}>
+  tester 2
+  <div
+    className="chat-list_item_online">
+    Онлайн
+  </div>
+</div>
+`;

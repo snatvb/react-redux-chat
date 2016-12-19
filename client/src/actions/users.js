@@ -9,7 +9,7 @@ const {FETCH_USERS_FULFILLED, FETCH_USERS_REJECT} = actionTypes;
 
 export function getUsers() {
     return function (dispatch) {
-        axios.get("/api/users/")
+        return axios.get("/api/users/")
             .then((response) => {
                 dispatch({ type: FETCH_USERS_FULFILLED, payload: response.data })
             })
